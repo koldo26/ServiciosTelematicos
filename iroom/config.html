@@ -1,4 +1,11 @@
-﻿<style>
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Room Project | CONFIG</title>
+</head>
+<meta charset="utf-8" />
+
+<style>
     .estilo-titulo {
         background-color: #bd0ac7;
         color: #ffffff;
@@ -47,10 +54,8 @@
     }
 
         #columnas > div {
-            width:400px; 
+            width: 400px;
         }
-
- 
 </style>
 <div id="contenedor_principal" syle="width:800px">
     <div class="estilo-titulo"> <strong> <h1> Smart Room Project</h1></strong></div>
@@ -59,7 +64,7 @@
     </div>
     <div id="columnas">
         <div>
-            <p><center>Datos de la habitacion</center></p>  
+            <p><center>Datos de la habitacion</center></p>
             <center>
                 <datalist id="pais">
                     <option value="España">
@@ -74,20 +79,45 @@
                     <option value="Alemania">
                 </datalist>
                 <form>
-                <p>Pais: <input list="pais"/></></p>
-                <p> Ciudad: <input name="ciudad" type="text" /></></p>
-                <p> Coords. GPS: <input name="localizacion" type="text" /></></p>
-                <p> Mapa URL: <input name="maps" type="url" /></></p>
-                <p> Foto estacion: <input name="foto" type="file" /></></p>
-                <p> Contraseña: <input name="pass" type="password"/></></p>
-                <p><input name="envio_datos" type="submit"/></p>
-
+                    <p>Pais: <input list="pais" /></></p>
+                    <p> Ciudad: <input name="ciudad" type="text" /></></p>
+                    <p> Coords. GPS: <input name="localizacion" type="text" /></></p>
+                    <p> Mapa URL: <input name="maps" type="url" /></></p>
+                    <p> Foto estacion: <input name="foto" type="file" /></></p>
+                    <p> Contraseña: <input name="pass" type="password" /></></p>
+                    <p><input name="envio_datos" action ="datos.js" type="submit"/></p>
                 </form>
-            </center> </div>
-    <div>
-        <p><center>Seleccione los sensores</center></p>
+                
+            </center>
+        </div>
+        <div>
+            <p><center>Seleccione los sensores</center></p>
+            <form>
+                <input type="checkbox" id="temperatura">
+                <label for="temperatura">Temperatura</label><br>
+                <input type="checkbox" id="humedad">
+                <label for="humedad">Humedad</label><br>
+                <input type="checkbox" id="sonido">
+                <label for="sonido">Nivel de sonido</label><br>
+                <input type="checkbox" id="luz">
+                <label for="luz">Nivel de luz</label><br>
+                <input type="checkbox" id="movimiento">
+                <label for="movimiento">Movimiento</label><br>
+                <br />
+            </form>
+                <p><center>Configure las alertas</center></center></p>
+                    <p>Temperatura maxima</p>
+                        <form>
+                             <input id="max_temp" type="number" min="0" max="50" />
+                     </form>
+                       <p>Temperatura minima</p>
+                         <form>
+                             <input id="min_temp" type="number" min="-30" max="0" />
+                        </form>
+
+
+        </div>
     </div>
-</div>
     <div class="estilo-footer"><strong><h2>Universidad de Alcala</h2></strong></div>
 
 
