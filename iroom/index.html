@@ -1,34 +1,41 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-    <title>Smart Room Project</title>
-    <link rel="stylesheet" type="text/css" href="css/iroom.css" />
 
-</head>
-        <meta charset="utf-8" />
+    <head>
+        <title>Smart Room Project</title>
+        <link rel="stylesheet" type="text/css" href="css/iroom.css" />
 
-<body>
-<div id="contenedor_principal" syle="width:800px">
-        <div class="estilo-titulo"> <strong> <h1> Smart Room Project</h1></strong></div>
-        <div class="estilo-menu">
-            <nav> <br /> <a href="index.html"> <button> Inicio</button> </a><a href="config.html"> <button> Configuracion</button> </a> <a href="minombre.html"> <button> Mi nombre</button> </a> <button href=""> Menu N</button> <div class="estilo-informacion"> <button onclick="mostrarNombre()"> Informacion</button> </div> </nav>
-        </div>
-        <div class="estilo-datosroom">Datos de la habitacion</div>
-        <div class="estilo-datossensores">Datos de los sensores</div>
-        <div class="estilo-footer"><strong><h2>Universidad de Alcala</h2></strong></div>        
+    </head>
+    <meta charset="utf-8" />
+
+    <body>
+        <div class="estilo_fondoweb">
+            <div id="contenedor_principal" syle="width:800px">
+
+                <div class="estilo-titulo"> <strong> Smart Room Project</strong></div>
+                <div class="estilo-menu">
+                    <nav> <br /> <a href="index.html"> <button> Inicio</button> </a><a href="config.html"> <button> Configuracion</button> </a> <a href="minombre.html"> <button> Mi nombre</button> </a> <button href=""> Menu N</button> <div class="estilo-informacion"> <button onclick="mostrarNombre()"> Informacion</button> </div> </nav>
+                </div>
+                <div class="estilo-datosroom">Datos de la habitacion</div>
+                <div class="estilo-datossensores">Datos de los sensores</div>
 
 
-</div>
 
-     <script type="text/javascript">
-          function mostrarNombre(){
-            alert("Hola, " + sessionStorage.getItem("fname") + ", bienvenid@ a SmartRoom.");
-        }
-    </script>
+            </div>
+
+
+            <script type="text/javascript">
+                function mostrarNombre() {
+                    alert("Hola, " + localStorage.getItem("fname") + ", bienvenid@ a SmartRoom.");
+                }
+            </script>
 
 </body>
+    <footer>
+        <div class="estilo-footer"><strong>Universidad de Alcala</strong></div>
+    </footer>
 
-
+</div>
 </html>
 
 

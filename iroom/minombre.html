@@ -5,47 +5,50 @@
     <link rel="stylesheet" type="text/css" href="css/iroom.css" />
 </head>
 <meta charset="utf-8" />
+<div
+
+
+    <body>
+        <div class="estilo_fondoweb">
+            <div id="contenedor_principal" syle="width:800px">
+                <div class="estilo-titulo"> <strong> Smart Room Project</strong> </div>
+                <div class="estilo-menu">
+                    <nav> <br /> <a href="index.html"> <button> Inicio</button> </a><a href="config.html"> <button> Configuracion</button> </a> <a href="minombre.html"> <button> Mi nombre</button> </a> <button href=""> Menu N</button> <div class="estilo-informacion"> <button onclick="mostrarNombre()"> Informacion</button></div> </nav>
+                </div>
+                <div class="estilo-datosroom-info" id="nombre1">
+                    <form>
+                        <p>
+                        <p>
+                            Introduzca su nombre, por favor:
+                            <input type="text" id="fname" name="nombre"><br>
+                        <p><button onclick="guardarnombre()">Enviar nombre</button><br></p>
+
+                    </form>
+                </div>
+
+            </div>
+
+            <script type="text/javascript">
+                function guardarnombre() {
+                    var nombre = document.getElementById("fname");
+                    localStorage.setItem("fname", nombre.value);
+
+
+                }
+                function mostrarNombre() {
+                    alert("Hola, " + localStorage.getItem("fname") + ", bienvenid@ a SmartRoom.");
+                }
+
+            </script>
 
 
 
-<body>
-    <div id="contenedor_principal" syle="width:800px">
-        <div class="estilo-titulo"> <strong> <h1> Smart Room Project</h1> </strong> </div>
-        <div class="estilo-menu">
-            <nav> <br /> <a href="index.html"> <button> Inicio</button> </a><a href="config.html"> <button> Configuracion</button> </a> <a href="minombre.html"> <button> Mi nombre</button> </a> <button href=""> Menu N</button> <div class="estilo-informacion"> <button onclick="mostrarNombre()"> Informacion</button></div> </nav>
-        </div>
-        <div class="estilo-datosroom-info" id="nombre1">
-            <form>
-                <p>
-                <p>
-                    Introduzca su nombre, por favor:
-                    <input type="text" id="fname" name="nombre"><br>
-                    <button onclick="guardarnombre()">Enviar nombre</button><br>
-                    <div id="nombre"></div>
-            </form>
-        </div>
-
-</div>
-
-        <script type="text/javascript">
-                function guardarnombre(){
-            var nombre = document.getElementById("fname");
-            sessionStorage.setItem("fname", nombre.value);
 
 
-         }
-            function mostrarNombre(){
-            alert("Hola, " + sessionStorage.getItem("fname") + ", bienvenid@ a SmartRoom.");
-        }
-
-        </script>
-       
-  
-
-  
-
-</body>
-        <footer>
-            <div class="estilo-footer"><strong><h2>Universidad de Alcala</h2></strong></div>
-        </footer>
+    </body>
+<footer>
+    <div class="estilo-footer"><strong>Universidad de Alcala</strong></div>
+</footer>
+    </div>
 </html >
+

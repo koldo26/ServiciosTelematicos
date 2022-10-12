@@ -1,19 +1,25 @@
+
+
 .estilo-titulo {
     background-color: #bd0ac7;
     color: #ffffff;
     width: 800px;
     height: 50px;
     text-align: center;
+    font-size: 32px;
+    margin-left: 23.7%;
 }
 
 .estilo-menu {
     background-color: #9b02ff;
     width: 800px;
     height: 50px;
+    margin-left: 23.7%;
 }
 
 .estilo-informacion {
     float: right;
+
 }
 
 .estilo-datosroom {
@@ -21,6 +27,7 @@
     width: 400px;
     height: 200px;
     float: left;
+    margin-left: 23.7%;
 }
 
 .estilo-datossensores {
@@ -28,6 +35,7 @@
     width: 400px;
     height: 200px;
     float: left;
+    
 }
 
 .estilo-footer {
@@ -37,16 +45,21 @@
     width: 800px;
     height: 50px;
     clear: both;
+    font-size: 24px; 
+    margin-left: 23.7%;
 }
 
 #columnas {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 23.7%;
 }
 
     #columnas > div {
         width: 400px;
+        background-color: #da5304;
+       
     }
 
 
@@ -55,4 +68,42 @@
     width: 800px;
     height: 200px;
     float: left;
+    margin-left: 23.7%;
+}
+
+input[type=text] {
+    float: right;
+    margin-right: 25%;
+    width: 50%;
+   
+}
+
+input[type=url] {
+    float: right;
+    margin-right: 25%;
+    width: 50%;
+}
+
+input[type=list] {
+    float: right;
+    margin-right: 25%;
+    width: 50%;
+}
+
+input[type=password] {
+    float: right;
+    margin-right: 25%;
+    width: 50%;
+}
+
+.button_config {
+    position: relative;
+    top: 25px;
+    left: 50%;
+}
+.estilo_fondoweb {
+    background-color: #eb6969;
+    margin: auto;
+    width: auto;
+    height: 740px;
 }
