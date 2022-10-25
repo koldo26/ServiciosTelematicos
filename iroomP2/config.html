@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Room Project | CONFIG</title>
+    <link rel="stylesheet" type="text/css" href="css/iroom.css" />
+
+</head>
+<meta charset="utf-8" />
+
+
+<body>
+    <div class="estilo_fondoweb">
+        <div id="contenedor_principal" syle="width:800px">
+            <div class="estilo-titulo"> <strong>Smart Room Project</strong></div>
+            <div class="estilo-menu">
+                <nav> <br /> <a href="index.html"> <button> Inicio</button> </a><a href="config.html"> <button> Configuracion</button> </a> <a href="minombre.html"> <button> Mi nombre</button> </a> <button href=""> Menu N</button> <div class="estilo-informacion"> <button onclick="mostrarNombre()"> Informacion</button></div> </nav>
+            </div>
+            <div id="columnas">
+                <div>
+                    <p><center><b>Datos de la habitacion</b></center></p>
+
+                    <datalist id="pais">
+                        <option value="España">
+                        <option value="Francia">
+                        <option value="Portugal">
+                        <option value="Italia">
+                        <option value="Islandia">
+                        <option value="Grecia">
+                        <option value="Finlandia">
+                        <option value="Suecia">
+                        <option value="Noruega">
+                        <option value="Alemania">
+                    </datalist>
+
+                    <form id="formulario1" method="post">
+
+                        <p>Pais: <input type="text" list="pais" id="country" /></></p>
+                        <p> Ciudad: <input name="ciudad" type="text" /></></p>
+                        <p> Coords. GPS: <input name="localizacion" type="text" id="gps" onkeyup="coordenadas()" /></></p>
+                        <p> Mapa URL: <input name="maps" type="url" id="gmaps" /></> </p>
+                        <p> Foto estacion: <input name="foto" type="file" /></></p>
+                        <p> Contraseña: <input name="pass" type="password" id="passw" onkeyup="password1()" /></></p>
+                        <center><span id="alertapass"></span></center>
+
+                    </form>
+                    <p><input name="envio_datos" type="submit" id="botonenvio" /></p>
+
+                </div>
+                <div>
+                    <p><center><b>Seleccione los sensores</b></center></p>
+                    <form id="formulario2" method="post">
+                        <input type="checkbox" id="temperatura">
+                        <label for="temperatura">Temperatura</label><br>
+                        <input type="checkbox" id="humedad">
+                        <label for="humedad">Humedad</label><br>
+                        <input type="checkbox" id="sonido">
+                        <label for="sonido">Nivel de sonido</label><br>
+                        <input type="checkbox" id="luz">
+                        <label for="luz">Nivel de luz</label><br>
+                        <input type="checkbox" id="movimiento">
+                        <label for="movimiento">Movimiento</label><br>
+                        <br />
+                    </form>
+                    <p><center><b>Configure las alertas</b></center></p>
+                    <p>Temperatura maxima</p>
+                    <form id="formulario3" method="post">
+                        <input id="max_temp" type="number" min="-30" max="50" onkeyup="tempCheck()"/>
+                    </form>
+                    <p>Temperatura minima</p>
+                    <form>
+                        <input id="min_temp" type="number" min="-30" max="30" onkeyup="tempCheck()" />
+                        <p>Diferencia de temperaturas: <span id="resultado-temp"></span></p>
+                    </form>
+                   
+
+                    <p><img src="images/back_button.svg" /><a href="index.html">Volver a la pagina principal</a>
+                </div>
+
+            </div>
+            <script type="text/javascript">
+
+                document.getElementById("botonenvio").onclick = function () {
+                    document.getElementById("formulario1").submit();
+                    document.getElementById("formulario2").submit();
+                    document.getElementById("formulario3").submit();
+                    
+                    tempCheck1();
+
+                }
+
+                function coordenadas() {
+                    var coords = document.getElementById("gps").value;
+                    document.getElementById("gmaps").value = "https://www.google.es/maps/@" + coords;
+                    
+                }
+                function paisCheck() {
+                    var country = document.getElementById("country").value;
+                    var pais = ["España", "Francia", "Portugal", "Portugal", "Italia", "Islandia", "Grecia", "Finlandia", "Suecia", "Noruega", "Alemania"];
+                    for (var i = 0; i < pais.length; i++) {
+                        if (country == pais[i]) {
+                            alert("pais encontrado");
+                        }
+                        else {
+                            alert("Debes introducir un pais que este en la lista");
+                        }
+                    }
+
+                }
+                function tempCheck() {
+
+                    var max = document.getElementById("max_temp").value;
+                    var min = document.getElementById("min_temp").value;
+                    suma = Number(max) - Number(min);
+                    document.getElementById("resultado-temp").innerHTML = suma;
+                   
+                }
+                function tempCheck1() {
+                    var dif = document.getElementById("resultado-temp");
+                    var temps = [22, 23, 24, 25, 26];
+                    for (var i = 0; i < temps; i++)
+                        if (dif == temps) {
+                            álert("Comprobar la temperatura");
+                        }                                    
+                }
+
+                
+                function password1() {
+                    if (document.getElementById('passw').value.length <= 6) {
+                        document.getElementById("alertapass").innerHTML = "La contraseña es debil";
+                    }
+                    else if (document.getElementById('passw').value.length <= 11) {
+                        document.getElementById("alertapass").innerHTML = "La contraseña es moderada";
+
+                    }
+                    else if (document.getElementById('passw').value.length <= 15) {
+                        document.getElementById("alertapass").innerHTML = "La contraseña es fuerte";
+                    }
+                }
+
+                function mostrarNombre() {
+                    alert("Hola, " + localStorage.getItem("fname") + ", bienvenid@ a SmartRoom.");
+                }
+            </script>
+        </div>
+
+
+</body>
+
+<footer>
+    <div class="estilo-footer"><strong>Universidad de Alcala</strong></div>
+</footer>
+</div>
+</html>

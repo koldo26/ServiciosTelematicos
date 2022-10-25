@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Room Project | Informacion</title>
+    <link rel="stylesheet" type="text/css" href="css/iroom.css" />
+</head>
+<meta charset="utf-8" />
+
+<div
+
+
+
+        <div class="estilo_fondoweb">
+            <div id="contenedor_principal" syle="width:800px">
+                <div class="estilo-titulo"> <strong> Smart Room Project</strong> </div>
+                <div class="estilo-menu">
+                    <nav> <br /> <a href="index.html"> <button> Inicio</button> </a><a href="config.html"> <button> Configuracion</button> </a> <a href="minombre.html"> <button> Mi nombre</button> </a> <button href=""> Menu N</button> <div class="estilo-informacion"> <button onclick="mostrarNombre()"> Informacion</button></div> </nav>
+                </div>
+                <div class="estilo-datosroom-info" id="nombre1">
+                    <form>
+                        <p>
+                        <p>
+                            Introduzca su nombre, por favor:
+                            <input type="text" id="fname" name="nombre"><br>
+                        <p><button onclick="guardarnombre()">Enviar nombre</button><br></p>
+                        </form>
+                    <form>
+                        <p>Introduzca su email: <input type="text" id="email"/></p>
+                        <p><input type="submit" id="emailc" onclick="emailCheck()" /><input type="submit" id="emaild" onclick="emailCheck1()" />
+                    </form>
+
+                </div>
+
+            </div>
+
+            <script type="text/javascript">
+                function guardarnombre() {
+                    var nombre = document.getElementById("fname");
+                    localStorage.setItem("fname", nombre.value);
+
+
+                }
+                function mostrarNombre(elementValue) {
+                    alert("Hola, " + localStorage.getItem("fname") + ", bienvenid@ a SmartRoom.");
+                }
+                function emailCheck() {
+                var email = document.getElementById("email").value;
+                if (email.indexOf('@') < 1 || email.indexOf('.') < 1) {
+                    alert("Introduce una direccion de correo correcto");
+                    }
+                }
+
+                function emailCheck1() {
+                    var emailregex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]*\.[a-zA-Z]{2,5}\.+[a-zA-Z]{2,3}$;
+
+
+}
+
+            </script>
+    </body>
+<footer>
+    <div class="estilo-footer"><strong>Universidad de Alcala</strong></div>
+</footer>
+    </div>
+</html>
+
