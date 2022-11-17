@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<meta charset="UTF-8" />
+<html>
+
+    <head>
+        <title>Smart Room Project</title>
+        <link rel="stylesheet" type="text/css" href="css/iroom.css" />
+
+    </head>
+    <body>
+        <div class="estilo_fondoweb">
+            <div id="contenedor_principal" syle="width:800px">
+
+                <div class="estilo-titulo"> <strong> Smart Room Project</strong></div>
+                <div class="estilo-menu">
+                    <nav> <br /> <a href="index.html"> <button> Inicio</button> </a><a href="config.html"> <button> Configuración</button> </a> <a href="minombre.html"> <button> Mi nombre</button> </a> <a href="galeria.html"> <button> Galeria</button> </a><a href="tablas.html"> <button> Tablas</button> </a> </a> <div class="estilo-informacion"> <button onclick="mostrarNombre()"> Informacion</button> </div> </nav>
+                </div>
+                <div class="estilo-datosroom">Datos de la habitación</div>
+                <div class="estilo-datossensores">Datos de los sensores</div>
+
+
+
+            </div>
+
+
+            <script type="text/javascript">
+                function mostrarNombre() {
+                    alert("Hola, " + localStorage.getItem("fname") + ", bienvenid@ a SmartRoom.");
+                }
+            </script>
+
+</body>
+    <footer>
+        <div class="estilo-footer"><strong>Universidad de Alcalá</strong></div>
+    </footer>
+
+</div>
+</html>
+
+

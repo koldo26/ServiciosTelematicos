@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<meta charset="UTF-8" />
+<html>
+
+<head>
+    <title>Smart Room Project</title>
+    <link rel="stylesheet" type="text/css" href="css/iroom.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+    <div class="estilo_fondoweb">
+        <div id="contenedor_principal" syle="width:800px">
+
+            <div class="estilo-titulo"> <strong> Smart Room Project</strong></div>
+            <div class="estilo-menu">
+                <nav> <br /> <a href="index.html"> <button> Inicio</button> </a><a href="config.html"> <button> Configuración</button> </a> <a href="minombre.html"> <button> Mi nombre</button> </a> <a href="galeria.html"> <button> Galeria</button> </a><a href="tablas.html"> <button> Tablas</button> </a> </a> <div class="estilo-informacion"> <button onclick="mostrarNombre()"> Informacion</button> </div> </nav>
+            </div>
+
+            <div class="estilo-tablasweb">
+                <div id="tabla1">
+                    <table class="table">
+                        <tr>
+                            <th>Ciudad</th>
+                            <th>Temperatura (Tº)</th>
+                            <th>Humedad (%)</th>
+                            <th>Ruido</th>
+                            <th>Nivel de luz</th>
+                            <th>Color de iluminación</th>
+                        </tr>
+                        <tr>
+                            <td>Moralzarzal</td>
+                            <td>25</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                        <tr>
+                            <td>Rascafría</td>
+                            <td>18</td>
+                            <td>55</td>
+                            <td>100</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                        <tr>
+                            <td>Becerril de la Sierra</td>
+                            <td>25</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                        <tr>
+                            <td>Navacerrada</td>
+                            <td>17</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                        <tr>
+                            <td>Puerto de Navacerada</td>
+                            <td>25</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                    </table>
+                    <center>
+                        <div class="tablaindex">
+                            <a id="pagina1" class="hovertabla" onclick="cambio1()">Página 1</a>
+                            <a id="pagina2" onclick="cambio2()" onmousedown="loadXMLDoc()" >Página 2</a>
+                            <a id="pagina3" onclick="cambio3()" onmousedown="func">Página 3</a>
+                            <a id="pagina4" onclick="cambio4()" >Página 4</a>
+                            <p></p>
+                        </div>
+                    </center>
+                </div>
+                <div id="tabla2" style="display:none">
+                    <table class="table" id="tablaa2"> </table>
+                    <center>
+                        <div class="tablaindex">
+                            <a id="pagina1" onclick="cambio1()">Página 1</a>
+                            <a id="pagina2" class="hovertabla" onclick="cambio2()">Página 2</a>
+                            <a id="pagina3" onclick="cambio3()">Página 3</a>
+                            <a id="pagina4" onclick="cambio4()">Página 4</a>
+                            <p></p>
+                        </div>
+                    </center>
+
+                </div>
+
+                <div id="tabla3" style="display:none">
+                    <table class="table" id="tablaa3">
+                        <tr>
+                            <th>Ciudad</th>
+                            <th>Temperatura (T)</th>
+                            <th>Humedad (%)</th>
+                            <th>Ruido</th>
+                            <th>Nivel de luz</th>
+                            <th>Color de iluminación</th>
+                        </tr>
+                    </table>
+                    
+                    <center>
+                        <div class="tablaindex">
+                            <a id="pagina1" onclick="cambio1()">Página 1</a>
+                            <a id="pagina2" onclick="cambio2()">Página 2</a>
+                            <a id="pagina3" class="hovertabla" onclick="cambio3()">Página 3</a>
+                            <a id="pagina4" onclick="cambio4()">Página 4</a>
+                            <p></p>
+                        </div>
+                    </center>
+
+                </div>
+                <div id="tabla4" style="display:none">
+                    <table class="table">
+                        <tr>
+                            <th id="ciud">Ciudad <input type="checkbox" id="ciu" onchange="histograma()"/></th>
+                            <th id="temper">Temperatura (T)<input type="checkbox" id="tem" onchange="histograma()" /></th>
+                            <th id="hume">Humedad (%)<input type="checkbox" id="hum" onchange="histograma()"/></th>
+                            <th id="ruid">Ruido<input type="checkbox" id="rui" onchange="histograma()"/></th>
+                            <th id="nive">Nivel de luz<input type="checkbox" id="luz" onchange="histograma()"/></th>
+                            <th id="col">Color de iluminación<input type="checkbox" id="ilu" onchange="histograma()"/></th>
+                        </tr>
+                        <tr>
+                            <td>Madrid</td>
+                            <td>25</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                        <tr>
+                            <td>Coslada</td>
+                            <td>25</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                        <tr>
+                            <td>San Fernando de Henares</td>
+                            <td>25</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                        <tr>
+                            <td>Torrejón de Ardoz</td>
+                            <td>25</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                        <tr>
+                            <td>Alcalá de Henares</td>
+                            <td>25</td>
+                            <td>48</td>
+                            <td>150</td>
+                            <td>120</td>
+                            <td>000000</td>
+                        </tr>
+                    </table> 
+                    <div id="histograma" class="histograma">
+                        <span id="titulo"></span>
+                        <table id="dibujar">
+                            <tr>
+                                <td id="dato1"></td>
+                                <td id="dibujar" class="barra"></td>
+                            </tr>
+                            <tr>
+                                <td id="dato2"></td>
+                                <td id="dibujar" class="barra"></td>
+
+                            </tr>
+                            <tr>
+                                <td id="dato3"></td>
+                                <td id="dibujar" class="barra"></td>
+
+                            </tr>
+                            <tr>
+                                <td id="dato4"></td>
+                                <td id="dibujar" class="barra"></td>
+
+                            </tr>
+                            <tr>
+                                <td id="dato5"></td>
+                                <td id="dibujar" class="barra"></td>
+
+                            </tr>
+                            <tr>
+                                <td id="dato6"></td>
+                                <td id="dibujar" class="barra"></td>
+
+                            </tr>
+                        </table>
+
+                       
+                    </div>
+                    <center>
+                        <div class="tablaindex">
+                            <a id="pagina1" onclick="cambio1()">Página 1</a>
+                            <a id="pagina2" onclick="cambio2()">Página 2</a>
+                            <a id="pagina3" onclick="cambio3()">Página 3</a>
+                            <a id="pagina4" class="hovertabla" onclick="cambio4()">Página 4</a>
+                            <p></p>
+                        </div>
+                    </center>
+                </div>
+
+            </div>
+
+
+
+            <script type="text/javascript">
+                function mostrarNombre() {
+                    alert("Hola, " + localStorage.getItem("fname") + ", bienvenid@ a SmartRoom.");
+                }
+
+
+                function cambio1() {
+                    document.getElementById("tabla2").style.display = "none";
+                    document.getElementById("tabla3").style.display = "none";
+                    document.getElementById("tabla4").style.display = "none";
+                    document.getElementById("tabla1").style.display = "block";
+                }
+                function cambio2() {
+                    document.getElementById("tabla1").style.display = "none";
+                    document.getElementById("tabla3").style.display = "none";
+                    document.getElementById("tabla4").style.display = "none";
+                    document.getElementById("tabla2").style.display = "block";
+                }
+                function cambio3() {
+                    document.getElementById("tabla1").style.display = "none";
+                    document.getElementById("tabla2").style.display = "none";
+                    document.getElementById("tabla4").style.display = "none";
+                    document.getElementById("tabla3").style.display = "block";
+                }
+                function cambio4() {
+                    document.getElementById("tabla1").style.display = "none";
+                    document.getElementById("tabla2").style.display = "none";
+                    document.getElementById("tabla3").style.display = "none";
+                    document.getElementById("tabla4").style.display = "block";
+                }
+
+                function loadXMLDoc() {
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function () {
+                        if (this.readyState == 4 && this.status == 200) {
+                            myFunction(this);
+                        }
+                    };
+                    xmlhttp.open("GET", "tabla.xml", true);
+                    xmlhttp.send();
+                }
+                function myFunction(xml) {
+                    var i;
+                    var xmlDoc = xml.responseXML;
+                    var table = "<tr><th>Ciudad</th><th>Temperatura(º)</th><th>Humedad</th><th>Ruido</th><th>Nivel de luz</th><th>Color de iluminación</th></tr>";
+                    var x = xmlDoc.getElementsByTagName("LOCALIZACION");
+                    for (i = 0; i < x.length; i++) {
+                        table += "<tr><td>" +
+                            x[i].getElementsByTagName("CIUDAD")[0].childNodes[0].nodeValue +
+                            "</td><td>" +
+                            x[i].getElementsByTagName("TEMPERATURA")[0].childNodes[0].nodeValue +
+                            "</td><td>" +
+                            x[i].getElementsByTagName("HUMEDAD")[0].childNodes[0].nodeValue +
+                            "</td><td>" +
+                            x[i].getElementsByTagName("RUIDO")[0].childNodes[0].nodeValue +
+                            "</td><td>" +
+                            x[i].getElementsByTagName("NIVELDELUZ")[0].childNodes[0].nodeValue +
+                            "</td><td>" +
+                            x[i].getElementsByTagName("COLORILUMINACION")[0].childNodes[0].nodeValue +
+                            "</td></tr>";
+                    }
+                    document.getElementById("tablaa2").innerHTML = table;
+                }
+
+                $(document).ready(function () {
+                    $.getJSON("tabla.json", function (data) {
+                        $('#pagina3').on('click', function () {
+                            var localizacion = '';
+                            $.each(data, function (key, value) {
+                                localizacion += '<tr>';
+                                localizacion += '<td>' + value.Ciudad + '</td>';
+                                localizacion += '<td>' + value.Temperatura + '</td>';
+                                localizacion += '<td>' + value.Humedad + '</td>';
+                                localizacion += '<td>' + value.Ruido + '</td>';
+                                localizacion += '<td>' + value.NivelLuz + '</td>';
+                                localizacion += '<td>' + value.ColorIluminacion + '</td>';
+                                localizacion += '</tr>';
+                            });
+                            $('#tablaa3').append(localizacion);
+                        });
+                    });
+                });
+
+                function histograma() {
+                    var titulo6 = document.getElementsById("ciud").value;
+                    var titulo1 = document.getElementsById("temper").value;
+                    var titulo2 = document.getElementsById("hume").value;
+                    var titulo3 = document.getElementsById("ruid").value;
+                    var titulo4 = document.getElementsById("nive").value;
+                    var titulo5 = document.getElementsById("col").value;
+                    const checkbox1 = document.getElementById('ciu');
+                    const checkbox2 = document.getElementById('tem');
+                    const checkbox3 = document.getElementById('hum');
+                    const checkbox4 = document.getElementById('rui');
+                    const checkbox5 = document.getElementById('luz');
+                    const checkbox6 = document.getElementById('ilu');
+
+                    if (checkbox1 == chan) {
+                        document.getElementById("titulo").innerHTML = titulo6;
+                    }
+                }
+
+
+            </script>
+
+</body>
+<footer>
+    <div class="estilo-footer"><strong>Universidad de Alcalá</strong></div>
+</footer>
+
+</div>
+</html>
